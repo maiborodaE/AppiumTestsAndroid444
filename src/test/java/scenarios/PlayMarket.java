@@ -41,8 +41,8 @@ public class PlayMarket {
             e.printStackTrace();
         }
         MobileElement element = driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().resourceId(\"com.android.vending:id/data_view\")).scrollIntoView("
-                        + "new UiSelector().textContains(\"You\").instance(2))"));
+                "new UiScrollable(new UiSelector().resourceId(\"com.android.vending:id/tab_recycler_view\")).scrollIntoView("
+                        + "new UiSelector().textContains(\"Понравится\").instance(1))"));
 
         //Perform the action on the element
         System.out.println(element.getAttribute("text")); //This line should print Recommended for You
