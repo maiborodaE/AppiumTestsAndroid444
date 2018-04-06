@@ -95,39 +95,29 @@ public class EffieFunctionaltests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("effie.app.com.effie:id/btn_p"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[@text = 'Завершение этапа']"))).click();
         driver.findElement(By.id("effie.app.com.effie:id/btn_p")).click();
-        //для 6 андроида:
-//    driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
-//            "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/" +
-//            "android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.FrameLayout/" +
-//            "android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton")).click();
-        Thread.sleep(2000);
-        //Нужно дописать скролл вниз, чтобы потом находить ТТ внизу
-//    MobileElement element = driver.findElement(MobileBy.AndroidUIAutomator(
-//            "new UiScrollable(new UiSelector().className(\"android.widget.LinearLayout\")).getChildByText("
-//                    + "new UiSelector().className(\"android.widget.TextView\"), \"Some streer address\").instance(5))"));
-//                    ""));
-
-
-
-//Perform the action on the element
-//    element.click();
-
-//    MobileElement element = driver.findElement(MobileBy.AndroidUIAutomator(
-//            "new UiScrollable(new UiSelector().className(\"android.widget.LinearLayout\")).scrollIntoView("
-//                    + "new UiSelector().xpath(\"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/\" +\n" +
-//                    "            \"android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/\" +\n" +
-//                    "            \"android.support.v4.widget.DrawerLayout/android.view.View/android.widget.LinearLayout[2]/\" +\n" +
-//                    "            \"android.widget.LinearLayout[2]/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/\" +\n" +
-//                    "            \"android.support.v7.widget.RecyclerView/android.widget.LinearLayout[\"+i+\"]/android.widget.LinearLayout/\" +\n" +
-//                    "            \"android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout\").instance("+i+"))"));
-//    System.out.println(element.getAttribute("resourceId")); //This line should print Recommended for You
-
+        //Etap Marshrut
+//Добавление ТТ в маршрут
+//Для 5го андроида:
+            driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.View/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageButton")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.id("effie.app.com.effie:id/add_point_to_route")).click();
+            driver.findElement(By.id("effie.app.com.effie:id/tt_layout_clicker")).click();
+            driver.findElement(By.id("effie.app.com.effie:id/btn_p")).click();
+//            Синхронизация добавленной ТТ
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/hierarchy/" +
+                    "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
+                    "android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.View/android.widget.LinearLayout[2]/" +
+                    "android.widget.LinearLayout[2]/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageButton"))).click();
+            driver.findElement(By.id("effie.app.com.effie:id/sync_additional_points")).click();
+            driver.findElement(By.id("effie.app.com.effie:id/btn_p")).click();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("effie.app.com.effie:id/btn_p"))).click();
+            Thread.sleep(2000);
         //Возможно поиск по нумерации:
         MobileElement TTadded = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
                 "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
                 "android.support.v4.widget.DrawerLayout/android.view.View/android.widget.LinearLayout[2]/" +
                 "android.widget.LinearLayout[2]/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/" +
-                "android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout/" +
+                "android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout/" +
                 "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout"));
         TTadded.click();
         driver.findElement(By.id("effie.app.com.effie:id/btn_p")).click();
