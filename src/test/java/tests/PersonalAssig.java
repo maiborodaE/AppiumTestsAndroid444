@@ -46,8 +46,7 @@ public class PersonalAssig {
         el1.sendKeys("u0auto2@effie.ua");
         MobileElement el2 = (MobileElement) driver.findElementById("effie.app.com.effie:id/input_password_la");
         el2.sendKeys("testPass");
-        MobileElement el3 = (MobileElement) driver.findElementById("effie.app.com.effie:id/btn_login_la");
-        el3.click();
+        driver.findElementById("effie.app.com.effie:id/btn_login_la").click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("effie.app.com.effie:id/buttonStartDay"))).click();
 
 
@@ -70,8 +69,9 @@ public class PersonalAssig {
         el10.click();
         MobileElement el11 = (MobileElement) driver.findElementByXPath("//android.widget.CheckedTextView[@text = 'Мои поручения']");
         el11.click();
-        MobileElement el12 = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
-        el12.click();
+//      Содать поручение:
+        MobileElement fingerPoru4 = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
+        fingerPoru4.click();
         MobileElement el13 = (MobileElement) driver.findElementById("effie.app.com.effie:id/fab_add_task");
         el13.click();
         driver.findElementById("effie.app.com.effie:id/input_title").sendKeys("Some Title");
@@ -84,7 +84,32 @@ public class PersonalAssig {
         driver.findElementById(skipButtonID).click();
         driver.findElementById("effie.app.com.effie:id/fab_save_task").click();
         driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
+//        Синхронизация поручений
         driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
+        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
+        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
+        driver.findElementById("effie.app.com.effie:id/assignmentTitle").click();
+        driver.findElementById("effie.app.com.effie:id/fab_edit").click();
+        driver.findElementById("effie.app.com.effie:id/taskStatus").click();
+        driver.findElementByXPath("//android.widget.TextView[@text = 'Закрыто']").click();
+//        driver.findElementById("effie.app.com.effie:id/taskComments").sendKeys("Some comment");
+        driver.findElementById("effie.app.com.effie:id/fab_save_task").click();
+        driver.findElementByAccessibilityId("Перейти вверх").click();
+        driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
+        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
+
+
+        System.out.println("Test pass");
+
+
+
+
+
+
+
+
 
 
 
@@ -94,7 +119,7 @@ public class PersonalAssig {
 
 
     }
-//
+
 //    @After
 //    public void tearDown() {
 //        driver.quit();
