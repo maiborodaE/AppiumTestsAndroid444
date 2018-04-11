@@ -34,6 +34,8 @@ public class EffieTestLogin {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "My Phone");
         caps.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
+//        caps.setCapability("udid", "6f9dea2f7d74"); //Xiaomi 7.1.2 N2G47H mobile
+
 //        caps.setCapability("udid", "30041c9e8a5bc200"); // samsung 4.4.4
 //        caps.setCapability("udid", "B5GBB18130152285"); //huawey 6.0
 
@@ -71,7 +73,7 @@ public class EffieTestLogin {
 //        driver.manage().timeouts().implicitlyWait(60,  TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, 120);
 
-//        Для 6го андроида:
+//        Для 6го и 7го андроида:
 //        MobileElement allowButton =  driver.findElement(By.id(allowButtonID));
 //            allowButton.click();
 //            allowButton.click();

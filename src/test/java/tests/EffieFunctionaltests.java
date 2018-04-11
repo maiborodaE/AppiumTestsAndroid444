@@ -13,12 +13,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 
-import static Credentials.MenuButtonsCreden.commitButtonID;
-import static Credentials.MenuButtonsCreden.okButtonID;
-import static Credentials.MenuButtonsCreden.skipButtonID;
+import static Credentials.MenuButtonsCreden.*;
+import static Credentials.PersAssignCreden.*;
 import static Credentials.QuestItemsCreden.*;
-import static Credentials.QuestItemsCreden.seventhQiXPath;
-
 public class EffieFunctionaltests {
     public static void main(String[] args) throws InterruptedException {
         AppiumDriver<MobileElement> driver = null;
@@ -226,7 +223,7 @@ public class EffieFunctionaltests {
         System.out.println("Test Visits pass");
         System.out.println(LocalDateTime.now());
 
-
+//      Модуль с поручениями:
         MobileElement el10 = (MobileElement) driver.findElementById("Open navigation drawer");
         el10.click();
         MobileElement el11 = (MobileElement) driver.findElementByXPath("//android.widget.CheckedTextView[@text = 'Мои поручения']");
@@ -253,7 +250,7 @@ public class EffieFunctionaltests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
         driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
 //        Выполнение поручения
-        driver.findElementById("effie.app.com.effie:id/assignmentTitle").click();
+        driver.findElementByXPath(editNewPAXPath).click();
         //        кнопка "редактирования поручения"
         driver.findElementById("effie.app.com.effie:id/action_edit_tasks").click();
         driver.findElementById("effie.app.com.effie:id/taskStatus").click();
