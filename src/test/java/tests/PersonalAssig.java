@@ -55,12 +55,11 @@ public class PersonalAssig {
 //            allowButton.click();
 
 
-        MobileElement el1 = (MobileElement) driver.findElementById("effie.app.com.effie:id/input_login_la");
-        el1.sendKeys("u0auto2@effie.ua");
-        MobileElement el2 = (MobileElement) driver.findElementById("effie.app.com.effie:id/input_password_la");
-        el2.sendKeys("testPass");
-        driver.findElementById("effie.app.com.effie:id/btn_login_la").click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("effie.app.com.effie:id/buttonStartDay"))).click();
+        //Login
+        driver.findElement(By.id(loginInputID)).sendKeys("u0auto2@effie.ua");
+        driver.findElement(By.id(pswrdInputID)).sendKeys("testPass");
+        driver.findElement(By.id(loginByttonID)).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(startDayButtonID))).click();
 
 
         //Synchronization
@@ -130,19 +129,6 @@ public class PersonalAssig {
 
         System.out.println("Test Pers Assig pass");
         System.out.println(LocalDateTime.now());
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

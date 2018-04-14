@@ -72,13 +72,11 @@ public class EffieFunctionaltests {
 
 
         //Login
-//        driver.findElement(By.id("effie.app.com.effie:id/input_login_la")).clear();
-        driver.findElement(By.id("effie.app.com.effie:id/input_login_la")).sendKeys("u0auto2@effie.ua");
-//        driver.findElement(By.id("effie.app.com.effie:id/input_login_la")).sendKeys("u0mc1@effie.ua");
-        driver.findElement(By.id("effie.app.com.effie:id/input_password_la")).sendKeys("testPass");
-        driver.findElement(By.id("effie.app.com.effie:id/btn_login_la")).click();
+        driver.findElement(By.id(loginInputID)).sendKeys("u0auto2@effie.ua");
+        driver.findElement(By.id(pswrdInputID)).sendKeys("testPass");
+        driver.findElement(By.id(loginByttonID)).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("effie.app.com.effie:id/buttonStartDay"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(startDayButtonID))).click();
 
         //Synchronization
         driver.findElement(By.id("effie.app.com.effie:id/step_button")).click();
@@ -223,48 +221,6 @@ public class EffieFunctionaltests {
         System.out.println("Test Visits pass");
         System.out.println(LocalDateTime.now());
 
-//      Модуль с поручениями:
-        MobileElement el10 = (MobileElement) driver.findElementById("Open navigation drawer");
-        el10.click();
-        MobileElement el11 = (MobileElement) driver.findElementByXPath("//android.widget.CheckedTextView[@text = 'Мои поручения']");
-        el11.click();
-//      Содать поручение:
-        MobileElement fingerPoru4 = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
-        fingerPoru4.click();
-        MobileElement el13 = (MobileElement) driver.findElementById("effie.app.com.effie:id/fab_add_task");
-        el13.click();
-        driver.findElementById("effie.app.com.effie:id/input_title").sendKeys("Some Title");
-        driver.findElementById("effie.app.com.effie:id/taskAddress").click();
-        driver.findElementById("effie.app.com.effie:id/checkBoxAddAs").click();
-        driver.findElementById("effie.app.com.effie:id/fab_confirm").click();
-        driver.findElementById("effie.app.com.effie:id/textTaskToDate").click();
-        MobileElement el14 = (MobileElement) driver.findElementByAccessibilityId("09 апреля 2018");
-        el14.click();
-        driver.findElementById(skipButtonID).click();
-//        кнопка "сохранения поручения"
-        driver.findElementById("effie.app.com.effie:id/action_task_save").click();
-        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
-//        Синхронизация поручений
-        driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
-        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
-        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
-//        Выполнение поручения
-        driver.findElementByXPath(editNewPAXPath).click();
-        //        кнопка "редактирования поручения"
-        driver.findElementById("effie.app.com.effie:id/action_edit_tasks").click();
-        driver.findElementById("effie.app.com.effie:id/taskStatus").click();
-        driver.findElementByXPath("//android.widget.TextView[@text = 'Закрыто']").click();
-//        driver.findElementById("effie.app.com.effie:id/taskComments").sendKeys("Some comment");
-        driver.findElementById("effie.app.com.effie:id/action_task_save").click();
-        driver.findElementByAccessibilityId("Перейти вверх").click();
-        driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
-        driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
-
-
-        System.out.println("Test Pers Assig pass");
-        System.out.println(LocalDateTime.now());
 }
 
 

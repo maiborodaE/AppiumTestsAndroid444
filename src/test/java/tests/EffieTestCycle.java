@@ -24,7 +24,7 @@ import static Credentials.MenuButtonsCreden.*;
 import static Credentials.QuestItemsCreden.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-public class EffieTestLogin {
+public class EffieTestCycle {
     public static void main(String[] args) throws InterruptedException {
         AppiumDriver<MobileElement> driver = null;
 //        WebDriverWait wait = new WebDriverWait(driver, 3);

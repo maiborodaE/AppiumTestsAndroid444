@@ -3,30 +3,28 @@ package tests;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AppiumTest {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InterruptedException {
         AppiumDriver<MobileElement> driver = null;
-
-
         //Set the Desired Capabilities
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "My Phone");
-        caps.setCapability("udid", "310072c8b3d92300"); //Give Device ID of your mobile phone
+        caps.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "5.1.1");
-        caps.setCapability("appPackage", "com.android.vending");
-        caps.setCapability("appActivity", "com.android.vending.AssetBrowserActivity");
-        caps.setCapability("noReset", "true");
-
+        caps.setCapability("appPackage", "effie.app.com.effie");
+        caps.setCapability("appActivity", "effie.app.com.effie.main.activities.LoginActivity");
+        caps.setCapability("noReset", false);
         //Instantiate Appium Driver
         try {
             driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
@@ -40,16 +38,12 @@ public class AppiumTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //Find element using ID property
-        driver.findElement(By.id("com.android.vending:id/search_box_idle_text")).click();
-//Find 'Google Play Store' element and set the value Google
-        driver.findElement(By.id("com.android.vending:id/search_box_text_input")).sendKeys("Google");
+//        WebDriverWait wait = new WebDriverWait(driver, 120);
 
-        //Press Enter key from Keyboard using any of the below methods
-//        ((AndroidDriver<MobileElement>) driver).pressKeyCode(66);
-        //OR
-        //The below code might now work for you, as some keyboards use Search button instead of ENTER. Hence,
-        // there are chances that the below line would fail on specific devices
-        driver.findElement(By.id("com.android.vending:id/search_box_text_input")).sendKeys(Keys.ENTER);
-    }
+        PersonalAssig personalAssig = new PersonalAssig();
+            personalAssig.sampleTest();
+
+
+}
+
 }
