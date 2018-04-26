@@ -30,14 +30,15 @@ public class PersonalAssig {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("deviceName", "My Phone");
-        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
+//        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
 //        desiredCapabilities.setCapability("udid", "6f9dea2f7d74"); //Xiaomi 7.1.2 N2G47H mobile
-
+        desiredCapabilities.setCapability("udid", "92012a9704bc154a"); //Samsung SM-J320H 5.1.1. MOBILE
+//        desiredCapabilities.setCapability("udid", "30041c9e8a5bc200"); // samsung 4.4.4
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("platformVersion", "5.1.1");
         desiredCapabilities.setCapability("appPackage", "effie.app.com.effie");
         desiredCapabilities.setCapability("appActivity", "effie.app.com.effie.main.activities.LoginActivity");
-        desiredCapabilities.setCapability("noReset", true);
+        desiredCapabilities.setCapability("noReset", false);
 
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
@@ -57,7 +58,9 @@ public class PersonalAssig {
 
         //Login
         driver.findElement(By.id(loginInputID)).sendKeys("u0auto2@effie.ua");
+        driver.hideKeyboard();
         driver.findElement(By.id(pswrdInputID)).sendKeys("testPass");
+        driver.hideKeyboard();
         driver.findElement(By.id(loginByttonID)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(startDayButtonID))).click();
 
@@ -78,15 +81,11 @@ public class PersonalAssig {
 
 
 //      Модуль с поручениями:
-        MobileElement el10 = (MobileElement) driver.findElementById("Open navigation drawer");
-        el10.click();
-        MobileElement el11 = (MobileElement) driver.findElementByXPath("//android.widget.CheckedTextView[@text = 'Мои поручения']");
-        el11.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id((gamburgerMenuID)))).click();
+        driver.findElementByXPath(PAmenuXPath).click();
 //      Содать поручение:
-        MobileElement fingerPoru4 = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
-        fingerPoru4.click();
-        MobileElement el13 = (MobileElement) driver.findElementById("effie.app.com.effie:id/fab_add_task");
-        el13.click();
+        driver.findElementByXPath(fingerPoru4XPath).click();
+        driver.findElementById(addPAbuttonID).click();
         driver.findElementById("effie.app.com.effie:id/input_title").sendKeys("Some Title");
         driver.findElementById("effie.app.com.effie:id/taskAddress").click();
         driver.findElementById("effie.app.com.effie:id/checkBoxAddAs").click();
@@ -107,14 +106,14 @@ public class PersonalAssig {
 
 //        кнопка "сохранения поручения"
         driver.findElementById("effie.app.com.effie:id/action_task_save").click();
-        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ImageView");
-//        Синхронизация поручений
-        driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
+        //        Синхронизация поручений
+//        driver.findElementByXPath(fingerPoru4XPath).click();
+        driver.findElementById(syncPAbuttonID).click();
         driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
         driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
 //        Выполнение поручения
-        driver.findElementByXPath(editNewPAXPath).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(editNewPAXPath))).click();
         //        кнопка "редактирования поручения"
         driver.findElementById("effie.app.com.effie:id/action_edit_tasks").click();
         driver.findElementById("effie.app.com.effie:id/taskStatus").click();
@@ -122,7 +121,7 @@ public class PersonalAssig {
 //        driver.findElementById("effie.app.com.effie:id/taskComments").sendKeys("Some comment");
         driver.findElementById("effie.app.com.effie:id/action_task_save").click();
         driver.findElementByAccessibilityId("Перейти вверх").click();
-        driver.findElementById("effie.app.com.effie:id/sync_tasks").click();
+        driver.findElementById(syncPAbuttonID).click();
         driver.findElementById("effie.app.com.effie:id/md_buttonDefaultPositive").click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text = '1']"))).isDisplayed();
 

@@ -1,8 +1,16 @@
 package Credentials;
 
 public class PersAssignCreden {
+//    Меню "Мои поручения"
+    public static String PAmenuXPath = "//android.widget.CheckedTextView[@text = 'Мои поручения']";
+    public static String fingerPoru4XPath = "//android.view.View/android.view.View/android.widget.ImageView";
+    public static String addPAbuttonID = "effie.app.com.effie:id/fab_add_task";
+    public static String syncPAbuttonID = "effie.app.com.effie:id/sync_tasks";
 
-//   Меню "Открытые поручения"
+
+
+
+    //   Меню "Открытые поручения"
     public static String editNewPAXPath = "//android.widget.TextView[@text = 'Some Title']";
 
 //    Меню "Создание поручения":
