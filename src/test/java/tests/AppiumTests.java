@@ -21,7 +21,11 @@ public class AppiumTests {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("deviceName", "My Phone");
-        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
+//        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
+//        desiredCapabilities.setCapability("udid", "52003f78ec665421"); //Samsung 7.0 J7 Mobile
+                desiredCapabilities.setCapability("udid", "920106db4844234a"); //Samsung 5.1.1. MOBILE Small
+
+
 //        desiredCapabilities.setCapability("udid", "92012a9704bc154a"); //Samsung SM-J320H 5.1.1. MOBILE
 
 //        desiredCapabilities.setCapability("udid", "6f9dea2f7d74"); //Xiaomi 7.1.2 N2G47H mobile
@@ -30,6 +34,8 @@ public class AppiumTests {
         desiredCapabilities.setCapability("appPackage", "effie.app.com.effie");
         desiredCapabilities.setCapability("appActivity", "effie.app.com.effie.main.activities.LoginActivity");
         desiredCapabilities.setCapability("noReset", false);
+//                desiredCapabilities.setCapability("autoAcceptAlerts", true);
+
 
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
