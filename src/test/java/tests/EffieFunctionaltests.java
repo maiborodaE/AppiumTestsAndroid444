@@ -50,6 +50,8 @@ public class EffieFunctionaltests {
         service.start();
 
 
+//        cmd /c "C:/Program Files (x86)/Appium/node.exe" "C:/Program Files (x86)/Appium/node_modules/appium/bin/Appium.js" "--address 0.0.0.0 --chromedriver-port 9516 --bootstrap-port 4725 --selendroid-port 8082 --no-reset --local-timezone"
+
         //Instantiate Appium Driver
         try {
             driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
@@ -210,7 +212,7 @@ public class EffieFunctionaltests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(fourthQiXPath))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(inputAnswerID))).click();
         Thread.sleep(2000);
-        MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("09 апреля 2018");
+        MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("09 мая 2018");
         el2.click();
         MobileElement el3 = (MobileElement) driver.findElementById(skipButtonID);
         el3.click();

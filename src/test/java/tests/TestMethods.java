@@ -67,7 +67,7 @@ public class TestMethods {
         driver.findElementById("effie.app.com.effie:id/checkBoxAddAs").click();
         driver.findElementById("effie.app.com.effie:id/fab_confirm").click();
         driver.findElementById("effie.app.com.effie:id/textTaskToDate").click();
-        MobileElement el14 = (MobileElement) driver.findElementByAccessibilityId("09 апреля 2018");
+        MobileElement el14 = (MobileElement) driver.findElementByAccessibilityId("09 мая 2018");
         el14.click();
         driver.findElementById(skipButtonID).click();
         driver.findElementById(imageAddButtonID).click();
@@ -95,7 +95,7 @@ public class TestMethods {
         driver.findElementById("effie.app.com.effie:id/action_task_close").click();
         driver.findElementById("effie.app.com.effie:id/input_comments").sendKeys("Some comment");
         driver.findElementById("effie.app.com.effie:id/photo_img").click();
-        driver.findElementByXPath("//android.widget.LinearLayout[3]/android.widget.ImageView[@resource-id = 'android:id/icon']").click();
+//        driver.findElementByXPath("//android.widget.LinearLayout[3]/android.widget.ImageView[@resource-id = 'android:id/icon']").click();
         driver.findElement(By.id(cameraTypeID)).click();
         Thread.sleep(2000);
         driver.findElement(By.id(makePhotoID)).click();
@@ -252,7 +252,7 @@ public class TestMethods {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(fourthQiXPath))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(inputAnswerID))).click();
         Thread.sleep(2000);
-        MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("09 апреля 2018");
+        MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("09 мая 2018");
         el2.click();
         MobileElement el3 = (MobileElement) driver.findElementById(skipButtonID);
         el3.click();

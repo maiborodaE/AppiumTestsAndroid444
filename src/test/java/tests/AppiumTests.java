@@ -21,9 +21,9 @@ public class AppiumTests {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("deviceName", "My Phone");
-//        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
+        desiredCapabilities.setCapability("udid", "310072c8b3d92300"); //Gsamsung 5.1.1. tablet
 //        desiredCapabilities.setCapability("udid", "52003f78ec665421"); //Samsung 7.0 J7 Mobile
-                desiredCapabilities.setCapability("udid", "920106db4844234a"); //Samsung 5.1.1. MOBILE Small
+//                desiredCapabilities.setCapability("udid", "920106db4844234a"); //Samsung 5.1.1. MOBILE Small
 
 
 //        desiredCapabilities.setCapability("udid", "92012a9704bc154a"); //Samsung SM-J320H 5.1.1. MOBILE
