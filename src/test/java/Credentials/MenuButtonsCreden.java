@@ -1,9 +1,10 @@
 package Credentials;
 
 public class MenuButtonsCreden {
-//    gamburgerMenus
+    //    Interfaces
     public static String gamburgerMenuID = "Open navigation drawer";
-//    Sync Menu
+    public static String backButtonAccID = "Перейти вверх";
+    //    Sync Menu
     public static String syncMenuXPath = "//android.widget.CheckedTextView[@text = 'Синхронизация']";
     public static String sendAllButtonID = "effie.app.com.effie:id/sync_send_media_files";
     public static String sendOnlyTextButtonID = "effie.app.com.effie:id/sync_send_full_option";

@@ -31,6 +31,7 @@ public class QuestItemsCreden {
     public static String fifthQiXPath = "//android.widget.TextView[@text = 'Some quest item 5']";
     public static String sixthQiXPath = "//android.widget.TextView[@text = 'Some quest item 6']";
     public static String seventhQiXPath = "//android.widget.TextView[@text = 'Some quest item 7']";
+    public static String eighthQiXPath = "//android.widget.TextView[@text = 'Some quest item 8']";
 
 
 
@@ -39,6 +40,7 @@ public class QuestItemsCreden {
 
     //    Camera IDs:
     public static String cameraTypeID = "MENUID_CAMERA_MODE";
+//    public static String makePhotoID = "MENUID_SHUTTER";
     public static String makePhotoID = "MENUID_SHUTTER";
     public static String conformPhotoID = "com.sec.android.app.camera:id/okay";
 
